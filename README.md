@@ -1,0 +1,50 @@
+# graphics-101
+
+graphics-101 is a minimal & standalone OpenGL test application build for demo purposes. See below for building instructions.
+
+## Building
+
+### Windows
+
+1. Check out the `windows` branch. It includes ready-to-go clang compiler binaries which we will use for consistency:
+    ```bash
+    git checkout windows
+    ```
+2. To build, do
+    ```bash
+    .\util\clang-18.1.8-x86_64-win\bin\clang++.exe main.cpp -I includes -w -o demo.exe
+    ```
+3. Done! The build process should ouput a `demo.exe` binary which you can run.
+
+### macOS
+
+1. If you do not have `clang`, install it with Brew:
+    ```bash
+    brew install llvm
+    ```
+    Alternatively, if you have Xcode, you might already have a bundled version of clang. To check, do
+    ```bash
+    xcodebuild -find clang++
+    # This will print out the path to your clang compiler if installed
+    ```
+2. To build, do
+    ```bash
+    clang++ main.cpp -lX11 -lm -lGL -I includes -o demo
+    # If you are using Xcode clang, replace ´clang++´ with the full path to the compiler
+    ```
+3. Done! The build process should ouput a `demo` binary which you can run.
+
+### linux
+
+1. Install the `GCC` and/or `clang` toolchain. On Debian systems (e.g. Ubuntu), the `build-essential` package is recommended  (installs GCC):
+    ```bash
+    sudo apt install build-essential
+    ```
+2. To build, do
+    ```bash
+    # For GCC
+    g++ main.cpp -lX11 -lm -lGL -I includes -o demo
+    # For clang/LLVM
+    clang++ main.cpp -lX11 -lm -lGL -I includes -o demo
+    ```
+3. Done! The build process should ouput a `demo` binary which you can run.
