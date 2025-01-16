@@ -1,5 +1,7 @@
-# Predefined build output binary file
+# Predefined build output binaries
 demo
+demo.exe
 
-# Prebuilt clang compiler directories
+# Prebuilt compiler directories
 clang**
+mingw**

@@ -4,6 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <string>
 
 #ifndef GLAD_GL_H_
 #include <glad/gl.h>
