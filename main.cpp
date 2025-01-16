@@ -20,7 +20,8 @@
 #include "helpers.h"
 
 // Callback for when a key is pressed
-void keyfunc(RGFW_window* win, RGFW_Key key, char keyChar, RGFW_keymod keyMod, b8 pressed) {
+void keyfunc(RGFW_window* win, RGFW_Key key, char keyChar, RGFW_keymod keyMod, b8 pressed)
+{
     // If the user presses the escape key, close the window
     if (key == RGFW_keyEscape && pressed)
     {
@@ -36,6 +37,9 @@ int main() {
         RGFW_windowNoResize
     );
 
+    // Let's set a function to handle the user pressing a key!
+    RGFW_setKeyCallback(keyfunc);
+
     // Let's load up OpenGL!
     if (!loadOpenGL(RGFW_getProcAddress))
     {
@@ -43,13 +47,11 @@ int main() {
         return -1;
     }
 
-    // Let's set a function to handle the user pressing a key!
-    RGFW_setKeyCallback(keyfunc);
-
-
     while (RGFW_window_shouldClose(win) == RGFW_FALSE)
     {
-        // Ok, so while the window is open...
+        // ** While the window is open **
+
+        // Let's check if the user pressed a key, and wait 16 ms
         RGFW_window_checkEvents(win, 16);
 
         // Let's set a background color
