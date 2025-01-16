@@ -1,2 +1,5 @@
-.vscode
+# Predefined build output binary file
+demo
 
+# Prebuilt clang compiler directories
+clang**
