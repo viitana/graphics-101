@@ -38,7 +38,7 @@ First, clone the repo! Next, follow the instructions based on your platform:
     ```
 2. To build, do
     ```bash
-    clang++ main.cpp -lm -lGL -I includes -o demo
+    clang++ main.cpp -lm -I includes -o demo -framework Cocoa -framework OpenGL -framework IOKit
     # If you are using Xcode clang, replace ´clang++´ with the full path to the compiler
     ```
 3. Done! The build process should ouput a `demo` binary which you can run.
