@@ -1,10 +1,6 @@
 #version 330
 
-in vec3 color;
-in vec2 texCoord;
-
-uniform sampler2D texture1;
-
 void main() {
-    gl_FragColor = texture(texture1, texCoord);
+    // This code will execute once for each pixel (fragment)!
+    gl_FragColor = vec4(1.0, 0.2, 0.2, 1.0);
 }
